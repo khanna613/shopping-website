@@ -1,0 +1,554 @@
+<html>
+<title>Mart Bag</title>
+<head></head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body
+{
+background:linear-gradient(#333,black,#333,black);
+}
+
+h1{
+text-align:center;
+background: #333;
+font-size:80px;
+font-family:Lato;
+}
+.fh{
+color:#66ff66;
+}
+.sh{
+color:white;
+}
+
+.st
+{
+color:white;
+font-size:20px;
+font-family:verdana;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height:240;
+	width:240;
+	margin-bottom:170;
+	margin-top:50;
+	border-radius:50%;
+
+}	
+	
+	img:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+ .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+	color:white;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;0
+    font-size: 36px;
+    margin-left: 50px;
+	color:white;
+}
+.sidenav .closebtn:hover
+{
+color:red;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.input[type=text] 
+{
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+.modal1 {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.6); 
+    padding-top: 60px;
+}
+
+
+.modal-content1 {
+    background-color:#d9d9d9;
+    margin: 5px auto; 
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+
+.close {
+    
+    position: fixed;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+button
+{
+background-color:4CAF50;
+color:white;
+text-align: center;
+margin-left:88%;
+margin-right:0%;
+}
+
+
+
+* {box-sizing: border-box}
+/* sign up button*/
+  input2[type=text], input2[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input2[type=text]:focus, input2[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+button2 {
+  background-color: #4CAF50;
+  color: white;
+  
+  margin-left:88%;
+  margin-right:0%;
+}
+
+button2:hover {
+  opacity:1;
+}
+
+.cancelbtn {
+	margin-left:-100px;
+  padding: 14px 20px;
+  background-color: #f44336;
+  
+}
+
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+ 
+}
+
+.container2 {
+  padding: 16px;
+}
+
+.modal {
+  overflow: auto;
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto; 
+  background-color: #474e5d;
+  padding-top: 60px;
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5px auto; 
+  border: 1px solid #888;
+  width: 80%; 
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+.close {
+position: absolute;
+    right: 35px;
+    top: 15px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;  
+   
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.footer{
+color:white;
+position: absolute;
+left:0;
+width: 100%;
+background-color:black;
+text-align:center;
+}
+
+.column{
+float:left;
+width:50%;
+flex:50%;
+text-align:center;
+color:#333300;
+}
+
+.row:after
+{
+content:"";
+display:table;
+clear:both;
+}
+
+.column img{
+margin-top: 8px;
+  vertical-align: right;
+  
+}
+
+.callbtn
+{
+width:70px;
+text-align:center;
+color:white;
+background-color:black;
+border-radius:40%;
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none; 
+    border-radius: 50%;
+}
+ul{
+list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+background-color:#999999;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10.3px;
+    text-decoration: none;
+}
+
+li a:hover{
+background-color:gray;
+}
+#section-left {
+   float: left;
+}
+
+#section-right {
+   float: right;
+   width: 220px;
+   margin-left: 30px
+}
+#section-middle
+{
+float:center;
+width: 220px;
+   margin-left: 200px;
+   }
+
+   .gb{
+   font-size:45px;
+   text-align:bottom;
+   color:black;
+   }
+</style>
+
+<body>
+
+<h1>
+<span class="fh">Mart</span>
+<span class="sh">Bag</span>
+<div>
+<span class="st">An Online Shopping Portal For The College Goers !</span>
+</div>
+
+</h1>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Account</a>
+  <a href="#">Help</a>
+   <a href="#">products</a>
+    <a href="#">sellers</a>
+    <a href="#">Contact</a>
+</div>
+
+<span style="font-size:50px;cursor:pointer;color:#cccccc;font-family:verdana"   onclick="openNav()">&#9776; Menu</span>
+
+
+<!--  -->
+<button onclick="document.getElementById('id01').style.display='block'">Login</button>
+
+<!--  -->
+<div id="id01" class="modal">
+
+  <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+
+  <!--  -->
+  <form class="modal-content1 animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <img src="2.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <div>
+	  <div>
+	  <button type="submit">Login</button>
+	  </div>
+	  </div>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      
+	  <div>
+	  </div>
+	  
+      <span class="psw"><a href="#">Forgot password?</a></span>
+	  <div>
+	  </div>
+	  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div> 
+<div>
+</div>
+
+
+<button onclick="document.getElementById('id02').style.display='block'">Sign Up</button>
+<!--  the Sign Up form -->
+<div id="id02" class="modal">
+  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal" ></span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="imgcontainercontainer">
+	<img src="2.jpg" alt="Avatar" class="avatar">
+      
+      <p><b>Please Fill In This Form To Create an Account.<b></p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="container2">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signup">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div> 
+ <a href="2.html"><img src="2.jpg"></a> 
+ <!-- <div class="footer">  -->
+ <div class="row">
+  <div class="column" style="background-color:#999999">
+  <span class="column img"><img  src="3.jpg"></span>
+  <h2>contact Information</h2>
+  <p><b>phone no </b>: 8851656779<div>.&nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; 9013147515 </div></p>
+  <div>
+  <p><b>Email Id</b>:<a href=" divijjindal28@gmail.com">divijjindal28@gmail.com</a></p>
+  </div>
+  <span class ="gb"><p>Thanks For Visiting !! happy shopping</p></span>
+  </div>
+   <div class="column" style="background-color:#999999">
+ <!--  <p><button class="callbtn">call us</p> -->
+ <div>
+   <p><b>Connect With Us On:</b><a href="#" class="fa fa-facebook"></a></p>
+   </div>
+   
+<p><b> Connect With Us On:</b><a href="#" class="fa fa-twitter"></a></p>
+<section id="section-left">
+ <ul style="list-style-type:none"><b>Search For</b>
+<li><a href="#">Clothes</a></li>
+<li><a href="#">Stationery</a></li>
+<li><a href="#">Gadgets</a></li>
+<li><a href="#">Fitness</a></li>
+<li><a href="#">Others</a></li>
+</ul>
+ </section>
+ <section id="section-right">
+ <ul style="list-style-type:none";color="blue"><b>Help</b>
+<li><a href="#">Delievery</a></li>
+<li><a href="#">Returns</a></li>
+<li><a href="#">Tracking</a></li>
+<li><a href="#">exchange</a></li>
+<li><a href="#">More help</a></li>
+</ul>
+</section>
+<section id="section-middle">
+ <ul style="list-style-type:none";color="blue"><b>Info</b>
+<li><a href="#">contact us</a></li>
+<li><a href="#">privacy policy</a></li>
+<li><a href="#">cookies policy</a></li>
+<li><a href="#">Terms and conditions</a></li>
+<li><a href="#">security</a></li>
+</ul>
+</section>
+ 
+   <h2></h2>
+  <p></p>
+   </div>
+ </div> 
+ <div class="footer"> 
+ <footer>
+ copyright &copy;2018 MartBag.in . All rights reserved 
+ </footer>
+
+ 
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</body>
+</html>
